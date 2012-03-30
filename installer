@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+pushd ~
+
+if [[ ! -e ./dotfiles ]]; then
+  git clone git@github.com:andywiens/dotfiles.git
+fi
+
+if [[ -e ~/.profile ]]; then
+  # complain
+  echo -e ".profile is already here! Do you want to proceed? (Y/N):\n"
+  if [[ "N" = read ]]; then
+    exit
+  fi
+ 
+fi
+
+if [[ -e ~/.bashrc ]]; then
+  # complain
+  echo -e ".bashrc is already here! Do you want to proceed? (Y/N):\n"
+  if [[ "N" = read ]]; then
+    exit
+  fi
+fi
+
+rm ~/.profile
+rm ~/.bashrc
+
+ln -s ~/dotfiles/profile ~/.profile
+ln -s ~/dotfiles/bashrc ~/.bashrc
+
+popd
