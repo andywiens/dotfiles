@@ -7,8 +7,8 @@ fi
 
 if [[ -e ~/.profile ]]; then
   # complain
-  echo -e ".profile is already here! Do you want to proceed? (Y/N):\n"
-  if [[ "N" = `read` ]]; then
+  echo -e ".profile is already here! Do you want to proceed? (y/n):\n"
+  if [[ "n" = `read` ]]; then
     exit
   fi
  
@@ -16,8 +16,8 @@ fi
 
 if [[ -e ~/.bashrc ]]; then
   # complain
-  echo -e ".bashrc is already here! Do you want to proceed? (Y/N):\n"
-  if [[ "N" = `read` ]]; then
+  echo -e ".bashrc is already here! Do you want to proceed? (y/n):\n"
+  if [[ "n" = `read` ]]; then
     exit
   fi
 fi
