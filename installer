@@ -2,6 +2,7 @@
 pushd ~
 
 if [[ ! -e ./dotfiles ]]; then
+  echo "cloning dotfiles from github"
   git clone git@github.com:andywiens/dotfiles.git
 fi
 
@@ -22,9 +23,11 @@ if [[ -e ~/.bashrc ]]; then
   fi
 fi
 
+echo "removing old .profile & .bashrc"
 rm ~/.profile
 rm ~/.bashrc
 
+echo "linking new files"
 ln -s ~/dotfiles/profile ~/.profile
 ln -s ~/dotfiles/bashrc ~/.bashrc
 
